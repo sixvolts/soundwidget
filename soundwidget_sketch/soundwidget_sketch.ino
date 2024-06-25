@@ -24,8 +24,6 @@ Adafruit_ADXL343 accel = Adafruit_ADXL343(12345, &Wire1);
 void setup(void)
 {
   Serial.begin(115200);
-  while (!Serial);
-  Serial.println("Accelerometer Test"); Serial.println("");
 
     /* Initialise the sensor */
   if(!accel.begin())
@@ -53,6 +51,8 @@ void setup(void)
   pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
   pixels.setBrightness(20); // not so bright
   
+  delay(5000);
+
 }
 
 //Has to be a separate fuction to make the callback work 
